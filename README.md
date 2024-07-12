@@ -1,3 +1,3 @@
 # theta_spreads
 
-0 dte and even 1 dte options have exploded in popularity in the last few years.
+This is a simple dashboard for my use. It does a few things. 
