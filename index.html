@@ -1,0 +1,24 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarpon's Strike Prices Dashboard</title>
+    </head>
+    <body style="background-color: #000; color: lime;">
+        <h1 style="color:lime; text-align: center; margin-top: 20px;">Tarpon's Strike Prices Dashboard</h1>
+        <ul style="list-style-type: none; padding: 0; margin: 0;">
+            {% for result in results %}
+            <li style="background-color: #222; padding: 10px; margin-bottom: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                <h2>{{ result['symbol'] }}</h2>
+                <p>Current Price: ${{ result['current_price'] }}</p>
+                <p>Implied Volatility: {{ result['implied_volatility']*100 }}</p>
+                <p>Lower Short Strike: ${{ result['lower_short_strike'] }}</p>
+                <p>Upper Short Strike: ${{ result['upper_short_strike'] }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
